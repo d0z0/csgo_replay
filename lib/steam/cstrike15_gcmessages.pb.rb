@@ -16,80 +16,80 @@ require 'steam/steammessages.pb'
 # Enum Classes
 #
 class ECsgoGCMsg < ::Protobuf::Enum
-  define :k_EMsgGCCStrike15_v2_Base, 9100
-  define :k_EMsgGCCStrike15_v2_MatchmakingStart, 9101
-  define :k_EMsgGCCStrike15_v2_MatchmakingStop, 9102
-  define :k_EMsgGCCStrike15_v2_MatchmakingClient2ServerPing, 9103
-  define :k_EMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate, 9104
-  define :k_EMsgGCCStrike15_v2_MatchmakingGC2ServerReserve, 9105
-  define :k_EMsgGCCStrike15_v2_MatchmakingServerReservationResponse, 9106
-  define :k_EMsgGCCStrike15_v2_MatchmakingGC2ClientReserve, 9107
-  define :k_EMsgGCCStrike15_v2_MatchmakingServerRoundStats, 9108
-  define :k_EMsgGCCStrike15_v2_MatchmakingClient2GCHello, 9109
-  define :k_EMsgGCCStrike15_v2_MatchmakingGC2ClientHello, 9110
-  define :k_EMsgGCCStrike15_v2_MatchmakingServerMatchEnd, 9111
-  define :k_EMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon, 9112
-  define :k_EMsgGCCStrike15_v2_MatchmakingServer2GCKick, 9113
-  define :k_EMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm, 9114
-  define :k_EMsgGCCStrike15_v2_MatchmakingGCOperationalStats, 9115
-  define :k_EMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate, 9116
-  define :k_EMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate, 9117
-  define :k_EMsgGCCStrike15_v2_ServerNotificationForUserPenalty, 9118
-  define :k_EMsgGCCStrike15_v2_ClientReportPlayer, 9119
-  define :k_EMsgGCCStrike15_v2_ClientReportServer, 9120
-  define :k_EMsgGCCStrike15_v2_ClientCommendPlayer, 9121
-  define :k_EMsgGCCStrike15_v2_ClientReportResponse, 9122
-  define :k_EMsgGCCStrike15_v2_ClientCommendPlayerQuery, 9123
-  define :k_EMsgGCCStrike15_v2_ClientCommendPlayerQueryResponse, 9124
-  define :k_EMsgGCCStrike15_v2_WatchInfoUsers, 9126
-  define :k_EMsgGCCStrike15_v2_ClientRequestPlayersProfile, 9127
-  define :k_EMsgGCCStrike15_v2_PlayersProfile, 9128
-  define :k_EMsgGCCStrike15_v2_SetMyMedalsInfo, 9129
-  define :k_EMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate, 9131
-  define :k_EMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment, 9132
-  define :k_EMsgGCCStrike15_v2_PlayerOverwatchCaseStatus, 9133
-  define :k_EMsgGCCStrike15_v2_GC2ClientTextMsg, 9134
-  define :k_EMsgGCCStrike15_v2_Client2GCTextMsg, 9135
-  define :k_EMsgGCCStrike15_v2_MatchEndRunRewardDrops, 9136
-  define :k_EMsgGCCStrike15_v2_MatchEndRewardDropsNotification, 9137
-  define :k_EMsgGCCStrike15_v2_ClientRequestWatchInfoFriends2, 9138
-  define :k_EMsgGCCStrike15_v2_MatchList, 9139
-  define :k_EMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames, 9140
-  define :k_EMsgGCCStrike15_v2_MatchListRequestRecentUserGames, 9141
-  define :k_EMsgGCCStrike15_v2_GC2ServerReservationUpdate, 9142
-  define :k_EMsgGCCStrike15_v2_ClientVarValueNotificationInfo, 9144
-  define :k_EMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification, 9145
-  define :k_EMsgGCCStrike15_v2_MatchListRequestTournamentGames, 9146
-  define :k_EMsgGCCStrike15_v2_MatchListRequestFullGameInfo, 9147
-  define :k_EMsgGCCStrike15_v2_GiftsLeaderboardRequest, 9148
-  define :k_EMsgGCCStrike15_v2_GiftsLeaderboardResponse, 9149
-  define :k_EMsgGCCStrike15_v2_ServerVarValueNotificationInfo, 9150
-  define :k_EMsgGCToGCReloadVersions, 9151
-  define :k_EMsgGCCStrike15_v2_ClientSubmitSurveyVote, 9152
-  define :k_EMsgGCCStrike15_v2_Server2GCClientValidate, 9153
-  define :k_EMsgGCCStrike15_v2_MatchListRequestLiveGameForUser, 9154
-  define :k_EMsgGCCStrike15_v2_Server2GCPureServerValidationFailure, 9155
-  define :k_EMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest, 9156
-  define :k_EMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse, 9157
-  define :k_EMsgGCCStrike15_v2_AccountPrivacySettings, 9158
-  define :k_EMsgGCCStrike15_v2_SetMyActivityInfo, 9159
-  define :k_EMsgGCCStrike15_v2_MatchListRequestTournamentPredictions, 9160
-  define :k_EMsgGCCStrike15_v2_MatchListUploadTournamentPredictions, 9161
-  define :k_EMsgGCCStrike15_v2_DraftSummary, 9162
-  define :k_EMsgGCCStrike15_v2_ClientRequestJoinFriendData, 9163
-  define :k_EMsgGCCStrike15_v2_ClientRequestJoinServerData, 9164
-  define :k_EMsgGCCStrike15_v2_ClientRequestNewMission, 9165
-  define :k_EMsgGCCStrike15_v2_GC2ServerNotifyXPRewarded, 9166
-  define :k_EMsgGCCStrike15_v2_GC2ClientTournamentInfo, 9167
-  define :k_EMsgGC_GlobalGame_Subscribe, 9168
-  define :k_EMsgGC_GlobalGame_Unsubscribe, 9169
-  define :k_EMsgGC_GlobalGame_Play, 9170
-  define :k_EMsgGCCStrike15_v2_AcknowledgePenalty, 9171
-  define :k_EMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin, 9172
-  define :k_EMsgGCCStrike15_v2_GC2ClientGlobalStats, 9173
-  define :k_EMsgGCCStrike15_v2_Client2GCStreamUnlock, 9174
-  define :k_EMsgGCCStrike15_v2_FantasyRequestClientData, 9175
-  define :k_EMsgGCCStrike15_v2_FantasyUpdateClientData, 9176
+  define :K_EMsgGCCStrike15_v2_Base, 9100
+  define :K_EMsgGCCStrike15_v2_MatchmakingStart, 9101
+  define :K_EMsgGCCStrike15_v2_MatchmakingStop, 9102
+  define :K_EMsgGCCStrike15_v2_MatchmakingClient2ServerPing, 9103
+  define :K_EMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate, 9104
+  define :K_EMsgGCCStrike15_v2_MatchmakingGC2ServerReserve, 9105
+  define :K_EMsgGCCStrike15_v2_MatchmakingServerReservationResponse, 9106
+  define :K_EMsgGCCStrike15_v2_MatchmakingGC2ClientReserve, 9107
+  define :K_EMsgGCCStrike15_v2_MatchmakingServerRoundStats, 9108
+  define :K_EMsgGCCStrike15_v2_MatchmakingClient2GCHello, 9109
+  define :K_EMsgGCCStrike15_v2_MatchmakingGC2ClientHello, 9110
+  define :K_EMsgGCCStrike15_v2_MatchmakingServerMatchEnd, 9111
+  define :K_EMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon, 9112
+  define :K_EMsgGCCStrike15_v2_MatchmakingServer2GCKick, 9113
+  define :K_EMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm, 9114
+  define :K_EMsgGCCStrike15_v2_MatchmakingGCOperationalStats, 9115
+  define :K_EMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate, 9116
+  define :K_EMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate, 9117
+  define :K_EMsgGCCStrike15_v2_ServerNotificationForUserPenalty, 9118
+  define :K_EMsgGCCStrike15_v2_ClientReportPlayer, 9119
+  define :K_EMsgGCCStrike15_v2_ClientReportServer, 9120
+  define :K_EMsgGCCStrike15_v2_ClientCommendPlayer, 9121
+  define :K_EMsgGCCStrike15_v2_ClientReportResponse, 9122
+  define :K_EMsgGCCStrike15_v2_ClientCommendPlayerQuery, 9123
+  define :K_EMsgGCCStrike15_v2_ClientCommendPlayerQueryResponse, 9124
+  define :K_EMsgGCCStrike15_v2_WatchInfoUsers, 9126
+  define :K_EMsgGCCStrike15_v2_ClientRequestPlayersProfile, 9127
+  define :K_EMsgGCCStrike15_v2_PlayersProfile, 9128
+  define :K_EMsgGCCStrike15_v2_SetMyMedalsInfo, 9129
+  define :K_EMsgGCCStrike15_v2_PlayerOverwatchCaseUpdate, 9131
+  define :K_EMsgGCCStrike15_v2_PlayerOverwatchCaseAssignment, 9132
+  define :K_EMsgGCCStrike15_v2_PlayerOverwatchCaseStatus, 9133
+  define :K_EMsgGCCStrike15_v2_GC2ClientTextMsg, 9134
+  define :K_EMsgGCCStrike15_v2_Client2GCTextMsg, 9135
+  define :K_EMsgGCCStrike15_v2_MatchEndRunRewardDrops, 9136
+  define :K_EMsgGCCStrike15_v2_MatchEndRewardDropsNotification, 9137
+  define :K_EMsgGCCStrike15_v2_ClientRequestWatchInfoFriends2, 9138
+  define :K_EMsgGCCStrike15_v2_MatchList, 9139
+  define :K_EMsgGCCStrike15_v2_MatchListRequestCurrentLiveGames, 9140
+  define :K_EMsgGCCStrike15_v2_MatchListRequestRecentUserGames, 9141
+  define :K_EMsgGCCStrike15_v2_GC2ServerReservationUpdate, 9142
+  define :K_EMsgGCCStrike15_v2_ClientVarValueNotificationInfo, 9144
+  define :K_EMsgGCCStrike15_v2_TournamentMatchRewardDropsNotification, 9145
+  define :K_EMsgGCCStrike15_v2_MatchListRequestTournamentGames, 9146
+  define :K_EMsgGCCStrike15_v2_MatchListRequestFullGameInfo, 9147
+  define :K_EMsgGCCStrike15_v2_GiftsLeaderboardRequest, 9148
+  define :K_EMsgGCCStrike15_v2_GiftsLeaderboardResponse, 9149
+  define :K_EMsgGCCStrike15_v2_ServerVarValueNotificationInfo, 9150
+  define :K_EMsgGCToGCReloadVersions, 9151
+  define :K_EMsgGCCStrike15_v2_ClientSubmitSurveyVote, 9152
+  define :K_EMsgGCCStrike15_v2_Server2GCClientValidate, 9153
+  define :K_EMsgGCCStrike15_v2_MatchListRequestLiveGameForUser, 9154
+  define :K_EMsgGCCStrike15_v2_Server2GCPureServerValidationFailure, 9155
+  define :K_EMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest, 9156
+  define :K_EMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse, 9157
+  define :K_EMsgGCCStrike15_v2_AccountPrivacySettings, 9158
+  define :K_EMsgGCCStrike15_v2_SetMyActivityInfo, 9159
+  define :K_EMsgGCCStrike15_v2_MatchListRequestTournamentPredictions, 9160
+  define :K_EMsgGCCStrike15_v2_MatchListUploadTournamentPredictions, 9161
+  define :K_EMsgGCCStrike15_v2_DraftSummary, 9162
+  define :K_EMsgGCCStrike15_v2_ClientRequestJoinFriendData, 9163
+  define :K_EMsgGCCStrike15_v2_ClientRequestJoinServerData, 9164
+  define :K_EMsgGCCStrike15_v2_ClientRequestNewMission, 9165
+  define :K_EMsgGCCStrike15_v2_GC2ServerNotifyXPRewarded, 9166
+  define :K_EMsgGCCStrike15_v2_GC2ClientTournamentInfo, 9167
+  define :K_EMsgGC_GlobalGame_Subscribe, 9168
+  define :K_EMsgGC_GlobalGame_Unsubscribe, 9169
+  define :K_EMsgGC_GlobalGame_Play, 9170
+  define :K_EMsgGCCStrike15_v2_AcknowledgePenalty, 9171
+  define :K_EMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin, 9172
+  define :K_EMsgGCCStrike15_v2_GC2ClientGlobalStats, 9173
+  define :K_EMsgGCCStrike15_v2_Client2GCStreamUnlock, 9174
+  define :K_EMsgGCCStrike15_v2_FantasyRequestClientData, 9175
+  define :K_EMsgGCCStrike15_v2_FantasyUpdateClientData, 9176
 end
 
 
@@ -247,8 +247,8 @@ class CMsgGCCStrike15_v2_Client2GCStreamUnlock < ::Protobuf::Message; end
 ##
 # File Options
 #
-set_option :optimize_for, ::Google::Protobuf::FileOptions::OptimizeMode::SPEED
-set_option :cc_generic_services, false
+
+
 
 
 ##

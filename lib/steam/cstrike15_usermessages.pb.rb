@@ -172,8 +172,8 @@ class CCSUsrMsg_ServerRankRevealAll < ::Protobuf::Message; end
 ##
 # File Options
 #
-set_option :optimize_for, ::Google::Protobuf::FileOptions::OptimizeMode::SPEED
-set_option :cc_generic_services, false
+
+
 
 
 ##

@@ -163,8 +163,8 @@ end
 ##
 # File Options
 #
-set_option :optimize_for, ::Google::Protobuf::FileOptions::OptimizeMode::SPEED
-set_option :cc_generic_services, false
+
+
 
 
 ##
@@ -660,3 +660,4 @@ class ::Google::Protobuf::MessageOptions < ::Protobuf::Message
   optional :int32, :".msgpool_soft_limit", 60000, :default => 32, :extension => true
   optional :int32, :".msgpool_hard_limit", 60001, :default => 384, :extension => true
 end
+

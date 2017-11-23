@@ -1,2 +1,5 @@
-# require 'google/protobuf/descriptor.pb'
-require 'steam/base_gcmessages.pb'
+require 'csgo_replay'
+require 'csgo_replay/version'
+require 'csgo_replay/bindata_records'
+require 'csgo_replay/demo_file'
+require 'steam_protos'

@@ -83,8 +83,8 @@ class CWorkshop_SetItemPaymentRules_Response < ::Protobuf::Message; end
 ##
 # File Options
 #
-set_option :optimize_for, ::Google::Protobuf::FileOptions::OptimizeMode::SPEED
-set_option :cc_generic_services, false
+
+
 
 
 ##
@@ -191,12 +191,12 @@ end
 class CGCToGCMsgRouted
   optional :uint32, :msg_type, 1
   optional :fixed64, :sender_id, 2
-  optional :bytes, :net_message, 3
+  optional :bytes, :Net_message, 3
 end
 
 class CGCToGCMsgRoutedReply
   optional :uint32, :msg_type, 1
-  optional :bytes, :net_message, 2
+  optional :bytes, :Net_message, 2
 end
 
 class CMsgGCUpdateSessionIP

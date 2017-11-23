@@ -82,7 +82,7 @@ end
 ##
 # File Options
 #
-set_option :cc_generic_services, false
+
 
 
 ##

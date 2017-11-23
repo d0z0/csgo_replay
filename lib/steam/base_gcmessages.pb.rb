@@ -16,26 +16,26 @@ require 'steam/steammessages.pb'
 # Enum Classes
 #
 class EGCBaseMsg < ::Protobuf::Enum
-  define :k_EMsgGCSystemMessage, 4001
-  define :k_EMsgGCReplicateConVars, 4002
-  define :k_EMsgGCConVarUpdated, 4003
-  define :k_EMsgGCInQueue, 4008
-  define :k_EMsgGCInviteToParty, 4501
-  define :k_EMsgGCInvitationCreated, 4502
-  define :k_EMsgGCPartyInviteResponse, 4503
-  define :k_EMsgGCKickFromParty, 4504
-  define :k_EMsgGCLeaveParty, 4505
-  define :k_EMsgGCServerAvailable, 4506
-  define :k_EMsgGCClientConnectToServer, 4507
-  define :k_EMsgGCGameServerInfo, 4508
-  define :k_EMsgGCError, 4509
-  define :k_EMsgGCReplay_UploadedToYouTube, 4510
-  define :k_EMsgGCLANServerAvailable, 4511
+  define :K_EMsgGCSystemMessage, 4001
+  define :K_EMsgGCReplicateConVars, 4002
+  define :K_EMsgGCConVarUpdated, 4003
+  define :K_EMsgGCInQueue, 4008
+  define :K_EMsgGCInviteToParty, 4501
+  define :K_EMsgGCInvitationCreated, 4502
+  define :K_EMsgGCPartyInviteResponse, 4503
+  define :K_EMsgGCKickFromParty, 4504
+  define :K_EMsgGCLeaveParty, 4505
+  define :K_EMsgGCServerAvailable, 4506
+  define :K_EMsgGCClientConnectToServer, 4507
+  define :K_EMsgGCGameServerInfo, 4508
+  define :K_EMsgGCError, 4509
+  define :K_EMsgGCReplay_UploadedToYouTube, 4510
+  define :K_EMsgGCLANServerAvailable, 4511
 end
 
 class EGCBaseProtoObjectTypes < ::Protobuf::Enum
-  define :k_EProtoObjectPartyInvite, 1001
-  define :k_EProtoObjectLobbyInvite, 1002
+  define :K_EProtoObjectPartyInvite, 1001
+  define :K_EProtoObjectLobbyInvite, 1002
 end
 
 class GC_BannedWordType < ::Protobuf::Enum
@@ -146,8 +146,8 @@ end
 ##
 # File Options
 #
-set_option :optimize_for, ::Google::Protobuf::FileOptions::OptimizeMode::SPEED
-set_option :cc_generic_services, false
+
+
 
 
 ##

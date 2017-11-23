@@ -16,30 +16,30 @@ require 'google/protobuf/descriptor.pb'
 # Enum Classes
 #
 class NET_Messages < ::Protobuf::Enum
-  define :net_NOP, 0
-  define :net_Disconnect, 1
-  define :net_File, 2
-  define :net_SplitScreenUser, 3
-  define :net_Tick, 4
-  define :net_StringCmd, 5
-  define :net_SetConVar, 6
-  define :net_SignonState, 7
-  define :net_PlayerAvatarData, 100
+  define :Net_NOP, 0
+  define :Net_Disconnect, 1
+  define :Net_File, 2
+  define :Net_SplitScreenUser, 3
+  define :Net_Tick, 4
+  define :Net_StringCmd, 5
+  define :Net_SetConVar, 6
+  define :Net_SignonState, 7
+  define :Net_PlayerAvatarData, 100
 end
 
 class CLC_Messages < ::Protobuf::Enum
-  define :clc_ClientInfo, 8
-  define :clc_Move, 9
-  define :clc_VoiceData, 10
-  define :clc_BaselineAck, 11
-  define :clc_ListenEvents, 12
-  define :clc_RespondCvarValue, 13
-  define :clc_FileCRCCheck, 14
-  define :clc_LoadingProgress, 15
-  define :clc_SplitPlayerConnect, 16
-  define :clc_ClientMessage, 17
-  define :clc_CmdKeyValues, 18
-  define :clc_HltvReplay, 20
+  define :Clc_ClientInfo, 8
+  define :Clc_Move, 9
+  define :Clc_VoiceData, 10
+  define :Clc_BaselineAck, 11
+  define :Clc_ListenEvents, 12
+  define :Clc_RespondCvarValue, 13
+  define :Clc_FileCRCCheck, 14
+  define :Clc_LoadingProgress, 15
+  define :Clc_SplitPlayerConnect, 16
+  define :Clc_ClientMessage, 17
+  define :Clc_CmdKeyValues, 18
+  define :Clc_HltvReplay, 20
 end
 
 class VoiceDataFormat_t < ::Protobuf::Enum
@@ -56,34 +56,34 @@ class ESplitScreenMessageType < ::Protobuf::Enum
 end
 
 class SVC_Messages < ::Protobuf::Enum
-  define :svc_ServerInfo, 8
-  define :svc_SendTable, 9
-  define :svc_ClassInfo, 10
-  define :svc_SetPause, 11
-  define :svc_CreateStringTable, 12
-  define :svc_UpdateStringTable, 13
-  define :svc_VoiceInit, 14
-  define :svc_VoiceData, 15
-  define :svc_Print, 16
-  define :svc_Sounds, 17
-  define :svc_SetView, 18
-  define :svc_FixAngle, 19
-  define :svc_CrosshairAngle, 20
-  define :svc_BSPDecal, 21
-  define :svc_SplitScreen, 22
-  define :svc_UserMessage, 23
-  define :svc_EntityMessage, 24
-  define :svc_GameEvent, 25
-  define :svc_PacketEntities, 26
-  define :svc_TempEntities, 27
-  define :svc_Prefetch, 28
-  define :svc_Menu, 29
-  define :svc_GameEventList, 30
-  define :svc_GetCvarValue, 31
-  define :svc_PaintmapData, 33
-  define :svc_CmdKeyValues, 34
-  define :svc_EncryptedData, 35
-  define :svc_HltvReplay, 36
+  define :Svc_ServerInfo, 8
+  define :Svc_SendTable, 9
+  define :Svc_ClassInfo, 10
+  define :Svc_SetPause, 11
+  define :Svc_CreateStringTable, 12
+  define :Svc_UpdateStringTable, 13
+  define :Svc_VoiceInit, 14
+  define :Svc_VoiceData, 15
+  define :Svc_Print, 16
+  define :Svc_Sounds, 17
+  define :Svc_SetView, 18
+  define :Svc_FixAngle, 19
+  define :Svc_CrosshairAngle, 20
+  define :Svc_BSPDecal, 21
+  define :Svc_SplitScreen, 22
+  define :Svc_UserMessage, 23
+  define :Svc_EntityMessage, 24
+  define :Svc_GameEvent, 25
+  define :Svc_PacketEntities, 26
+  define :Svc_TempEntities, 27
+  define :Svc_Prefetch, 28
+  define :Svc_Menu, 29
+  define :Svc_GameEventList, 30
+  define :Svc_GetCvarValue, 31
+  define :Svc_PaintmapData, 33
+  define :Svc_CmdKeyValues, 34
+  define :Svc_EncryptedData, 35
+  define :Svc_HltvReplay, 36
 end
 
 class ReplayEventType_t < ::Protobuf::Enum
@@ -179,7 +179,7 @@ class CCLCMsg_HltvReplay < ::Protobuf::Message; end
 ##
 # File Options
 #
-set_option :cc_generic_services, false
+
 
 
 ##
@@ -380,7 +380,7 @@ class CSVCMsg_SendTable
   end
 
   optional :bool, :is_end, 1
-  optional :string, :net_table_name, 2
+  optional :string, :Net_table_name, 2
   optional :bool, :needs_decoder, 3
   repeated ::CSVCMsg_SendTable::Sendprop_t, :props, 4
 end
