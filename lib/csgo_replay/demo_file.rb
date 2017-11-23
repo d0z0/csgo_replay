@@ -47,7 +47,8 @@ module CsgoReplay
           p = Packet.read(io)
           p.data.each do |data|
             puts "CMD -> #{data.cmd}"
-            puts "CMD -> #{data.message_size}"
+            puts "SIZE -> #{data.message_size}"
+            # puts "CLASS -> #{data.protobuf_class}"
           end
 
 

@@ -1,5 +1,4 @@
 require 'bindata'
-require 'protobuf'
 
 module CsgoReplay
   class QAngle < BinData::Record
