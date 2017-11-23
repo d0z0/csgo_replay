@@ -15,7 +15,7 @@ require 'google/protobuf/descriptor.pb'
 ##
 # Enum Classes
 #
-class GCProtoBufMsgSrc < ::Protobuf::Enum
+class CsgoReplay::GCProtoBufMsgSrc < ::Protobuf::Enum
   define :GCProtoBufMsgSrc_Unspecified, 0
   define :GCProtoBufMsgSrc_FromSystem, 1
   define :GCProtoBufMsgSrc_FromSteamID, 2
@@ -27,93 +27,93 @@ end
 ##
 # Message Classes
 #
-class CMsgProtoBufHeader < ::Protobuf::Message; end
-class CMsgWebAPIKey < ::Protobuf::Message; end
-class CMsgHttpRequest < ::Protobuf::Message
+class CsgoReplay::CMsgProtoBufHeader < ::Protobuf::Message; end
+class CsgoReplay::CMsgWebAPIKey < ::Protobuf::Message; end
+class CsgoReplay::CMsgHttpRequest < ::Protobuf::Message
   class RequestHeader < ::Protobuf::Message; end
   class QueryParam < ::Protobuf::Message; end
 
 end
 
-class CMsgWebAPIRequest < ::Protobuf::Message; end
-class CMsgHttpResponse < ::Protobuf::Message
+class CsgoReplay::CMsgWebAPIRequest < ::Protobuf::Message; end
+class CsgoReplay::CMsgHttpResponse < ::Protobuf::Message
   class ResponseHeader < ::Protobuf::Message; end
 
 end
 
-class CMsgAMFindAccounts < ::Protobuf::Message; end
-class CMsgAMFindAccountsResponse < ::Protobuf::Message; end
-class CMsgNotifyWatchdog < ::Protobuf::Message; end
-class CMsgAMGetLicenses < ::Protobuf::Message; end
-class CMsgPackageLicense < ::Protobuf::Message; end
-class CMsgAMGetLicensesResponse < ::Protobuf::Message; end
-class CMsgAMGetUserGameStats < ::Protobuf::Message; end
-class CMsgAMGetUserGameStatsResponse < ::Protobuf::Message
+class CsgoReplay::CMsgAMFindAccounts < ::Protobuf::Message; end
+class CsgoReplay::CMsgAMFindAccountsResponse < ::Protobuf::Message; end
+class CsgoReplay::CMsgNotifyWatchdog < ::Protobuf::Message; end
+class CsgoReplay::CMsgAMGetLicenses < ::Protobuf::Message; end
+class CsgoReplay::CMsgPackageLicense < ::Protobuf::Message; end
+class CsgoReplay::CMsgAMGetLicensesResponse < ::Protobuf::Message; end
+class CsgoReplay::CMsgAMGetUserGameStats < ::Protobuf::Message; end
+class CsgoReplay::CMsgAMGetUserGameStatsResponse < ::Protobuf::Message
   class Stats < ::Protobuf::Message; end
   class Achievement_Blocks < ::Protobuf::Message; end
 
 end
 
-class CMsgGCGetCommandList < ::Protobuf::Message; end
-class CMsgGCGetCommandListResponse < ::Protobuf::Message; end
-class CGCMsgMemCachedGet < ::Protobuf::Message; end
-class CGCMsgMemCachedGetResponse < ::Protobuf::Message
+class CsgoReplay::CMsgGCGetCommandList < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCGetCommandListResponse < ::Protobuf::Message; end
+class CsgoReplay::CGCMsgMemCachedGet < ::Protobuf::Message; end
+class CsgoReplay::CGCMsgMemCachedGetResponse < ::Protobuf::Message
   class ValueTag < ::Protobuf::Message; end
 
 end
 
-class CGCMsgMemCachedSet < ::Protobuf::Message
+class CsgoReplay::CGCMsgMemCachedSet < ::Protobuf::Message
   class KeyPair < ::Protobuf::Message; end
 
 end
 
-class CGCMsgMemCachedDelete < ::Protobuf::Message; end
-class CGCMsgMemCachedStats < ::Protobuf::Message; end
-class CGCMsgMemCachedStatsResponse < ::Protobuf::Message; end
-class CGCMsgSQLStats < ::Protobuf::Message; end
-class CGCMsgSQLStatsResponse < ::Protobuf::Message; end
-class CMsgAMAddFreeLicense < ::Protobuf::Message; end
-class CMsgAMAddFreeLicenseResponse < ::Protobuf::Message; end
-class CGCMsgGetIPLocation < ::Protobuf::Message; end
-class CIPLocationInfo < ::Protobuf::Message; end
-class CGCMsgGetIPLocationResponse < ::Protobuf::Message; end
-class CGCMsgSystemStatsSchema < ::Protobuf::Message; end
-class CGCMsgGetSystemStats < ::Protobuf::Message; end
-class CGCMsgGetSystemStatsResponse < ::Protobuf::Message; end
-class CMsgAMSendEmail < ::Protobuf::Message
+class CsgoReplay::CGCMsgMemCachedDelete < ::Protobuf::Message; end
+class CsgoReplay::CGCMsgMemCachedStats < ::Protobuf::Message; end
+class CsgoReplay::CGCMsgMemCachedStatsResponse < ::Protobuf::Message; end
+class CsgoReplay::CGCMsgSQLStats < ::Protobuf::Message; end
+class CsgoReplay::CGCMsgSQLStatsResponse < ::Protobuf::Message; end
+class CsgoReplay::CMsgAMAddFreeLicense < ::Protobuf::Message; end
+class CsgoReplay::CMsgAMAddFreeLicenseResponse < ::Protobuf::Message; end
+class CsgoReplay::CGCMsgGetIPLocation < ::Protobuf::Message; end
+class CsgoReplay::CIPLocationInfo < ::Protobuf::Message; end
+class CsgoReplay::CGCMsgGetIPLocationResponse < ::Protobuf::Message; end
+class CsgoReplay::CGCMsgSystemStatsSchema < ::Protobuf::Message; end
+class CsgoReplay::CGCMsgGetSystemStats < ::Protobuf::Message; end
+class CsgoReplay::CGCMsgGetSystemStatsResponse < ::Protobuf::Message; end
+class CsgoReplay::CMsgAMSendEmail < ::Protobuf::Message
   class ReplacementToken < ::Protobuf::Message; end
   class PersonaNameReplacementToken < ::Protobuf::Message; end
 
 end
 
-class CMsgAMSendEmailResponse < ::Protobuf::Message; end
-class CMsgGCGetEmailTemplate < ::Protobuf::Message; end
-class CMsgGCGetEmailTemplateResponse < ::Protobuf::Message; end
-class CMsgAMGrantGuestPasses2 < ::Protobuf::Message; end
-class CMsgAMGrantGuestPasses2Response < ::Protobuf::Message; end
-class CGCSystemMsg_GetAccountDetails < ::Protobuf::Message; end
-class CGCSystemMsg_GetAccountDetails_Response < ::Protobuf::Message; end
-class CMsgGCGetPersonaNames < ::Protobuf::Message; end
-class CMsgGCGetPersonaNames_Response < ::Protobuf::Message
+class CsgoReplay::CMsgAMSendEmailResponse < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCGetEmailTemplate < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCGetEmailTemplateResponse < ::Protobuf::Message; end
+class CsgoReplay::CMsgAMGrantGuestPasses2 < ::Protobuf::Message; end
+class CsgoReplay::CMsgAMGrantGuestPasses2Response < ::Protobuf::Message; end
+class CsgoReplay::CGCSystemMsg_GetAccountDetails < ::Protobuf::Message; end
+class CsgoReplay::CGCSystemMsg_GetAccountDetails_Response < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCGetPersonaNames < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCGetPersonaNames_Response < ::Protobuf::Message
   class PersonaName < ::Protobuf::Message; end
 
 end
 
-class CMsgGCCheckFriendship < ::Protobuf::Message; end
-class CMsgGCCheckFriendship_Response < ::Protobuf::Message; end
-class CMsgGCMsgMasterSetDirectory < ::Protobuf::Message
+class CsgoReplay::CMsgGCCheckFriendship < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCCheckFriendship_Response < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCMsgMasterSetDirectory < ::Protobuf::Message
   class SubGC < ::Protobuf::Message; end
 
 end
 
-class CMsgGCMsgMasterSetDirectory_Response < ::Protobuf::Message; end
-class CMsgGCMsgWebAPIJobRequestForwardResponse < ::Protobuf::Message; end
-class CGCSystemMsg_GetPurchaseTrust_Request < ::Protobuf::Message; end
-class CGCSystemMsg_GetPurchaseTrust_Response < ::Protobuf::Message; end
-class CMsgGCHAccountVacStatusChange < ::Protobuf::Message; end
-class CMsgGCGetPartnerAccountLink < ::Protobuf::Message; end
-class CMsgGCGetPartnerAccountLink_Response < ::Protobuf::Message; end
-class CMsgGCRoutingInfo < ::Protobuf::Message
+class CsgoReplay::CMsgGCMsgMasterSetDirectory_Response < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCMsgWebAPIJobRequestForwardResponse < ::Protobuf::Message; end
+class CsgoReplay::CGCSystemMsg_GetPurchaseTrust_Request < ::Protobuf::Message; end
+class CsgoReplay::CGCSystemMsg_GetPurchaseTrust_Response < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCHAccountVacStatusChange < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCGetPartnerAccountLink < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCGetPartnerAccountLink_Response < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCRoutingInfo < ::Protobuf::Message
   class RoutingMethod < ::Protobuf::Enum
     define :RANDOM, 0
     define :DISCARD, 1
@@ -124,19 +124,19 @@ class CMsgGCRoutingInfo < ::Protobuf::Message
 
 end
 
-class CMsgGCMsgMasterSetWebAPIRouting < ::Protobuf::Message
+class CsgoReplay::CMsgGCMsgMasterSetWebAPIRouting < ::Protobuf::Message
   class Entry < ::Protobuf::Message; end
 
 end
 
-class CMsgGCMsgMasterSetClientMsgRouting < ::Protobuf::Message
+class CsgoReplay::CMsgGCMsgMasterSetClientMsgRouting < ::Protobuf::Message
   class Entry < ::Protobuf::Message; end
 
 end
 
-class CMsgGCMsgMasterSetWebAPIRouting_Response < ::Protobuf::Message; end
-class CMsgGCMsgMasterSetClientMsgRouting_Response < ::Protobuf::Message; end
-class CMsgGCMsgSetOptions < ::Protobuf::Message
+class CsgoReplay::CMsgGCMsgMasterSetWebAPIRouting_Response < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCMsgMasterSetClientMsgRouting_Response < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCMsgSetOptions < ::Protobuf::Message
   class Option < ::Protobuf::Enum
     define :NOTIFY_USER_SESSIONS, 0
     define :NOTIFY_SERVER_SESSIONS, 1
@@ -148,12 +148,12 @@ class CMsgGCMsgSetOptions < ::Protobuf::Message
 
 end
 
-class CMsgGCHUpdateSession < ::Protobuf::Message
+class CsgoReplay::CMsgGCHUpdateSession < ::Protobuf::Message
   class ExtraField < ::Protobuf::Message; end
 
 end
 
-class CMsgNotificationOfSuspiciousActivity < ::Protobuf::Message
+class CsgoReplay::CMsgNotificationOfSuspiciousActivity < ::Protobuf::Message
   class MultipleGameInstances < ::Protobuf::Message; end
 
 end
@@ -170,7 +170,7 @@ end
 ##
 # Message Fields
 #
-class CMsgProtoBufHeader
+class CsgoReplay::CMsgProtoBufHeader
   # Message Options
   set_option :".msgpool_soft_limit", 256
   set_option :".msgpool_hard_limit", 1024
@@ -183,11 +183,11 @@ class CMsgProtoBufHeader
   optional :string, :target_job_name, 12
   optional :int32, :eresult, 13, :default => 2
   optional :string, :error_message, 14
-  optional ::GCProtoBufMsgSrc, :gc_msg_src, 200, :default => ::GCProtoBufMsgSrc::GCProtoBufMsgSrc_Unspecified
+  optional ::CsgoReplay::GCProtoBufMsgSrc, :gc_msg_src, 200, :default => ::CsgoReplay::GCProtoBufMsgSrc::GCProtoBufMsgSrc_Unspecified
   optional :uint32, :gc_dir_index_source, 201
 end
 
-class CMsgWebAPIKey
+class CsgoReplay::CMsgWebAPIKey
   optional :uint32, :status, 1, :default => 255
   optional :uint32, :account_id, 2, :default => 0
   optional :uint32, :publisher_group_id, 3, :default => 0
@@ -195,7 +195,7 @@ class CMsgWebAPIKey
   optional :string, :domain, 5
 end
 
-class CMsgHttpRequest
+class CsgoReplay::CMsgHttpRequest
   class RequestHeader
     optional :string, :name, 1
     optional :string, :value, 2
@@ -209,44 +209,44 @@ class CMsgHttpRequest
   optional :uint32, :request_method, 1
   optional :string, :hostname, 2
   optional :string, :url, 3
-  repeated ::CMsgHttpRequest::RequestHeader, :headers, 4
-  repeated ::CMsgHttpRequest::QueryParam, :get_params, 5
-  repeated ::CMsgHttpRequest::QueryParam, :post_params, 6
+  repeated ::CsgoReplay::CMsgHttpRequest::RequestHeader, :headers, 4
+  repeated ::CsgoReplay::CMsgHttpRequest::QueryParam, :get_params, 5
+  repeated ::CsgoReplay::CMsgHttpRequest::QueryParam, :post_params, 6
   optional :bytes, :body, 7
   optional :uint32, :absolute_timeout, 8
 end
 
-class CMsgWebAPIRequest
+class CsgoReplay::CMsgWebAPIRequest
   optional :string, :UNUSED_job_name, 1
   optional :string, :interface_name, 2
   optional :string, :method_name, 3
   optional :uint32, :version, 4
-  optional ::CMsgWebAPIKey, :api_key, 5
-  optional ::CMsgHttpRequest, :request, 6
+  optional ::CsgoReplay::CMsgWebAPIKey, :api_key, 5
+  optional ::CsgoReplay::CMsgHttpRequest, :request, 6
   optional :uint32, :routing_app_id, 7
 end
 
-class CMsgHttpResponse
+class CsgoReplay::CMsgHttpResponse
   class ResponseHeader
     optional :string, :name, 1
     optional :string, :value, 2
   end
 
   optional :uint32, :status_code, 1
-  repeated ::CMsgHttpResponse::ResponseHeader, :headers, 2
+  repeated ::CsgoReplay::CMsgHttpResponse::ResponseHeader, :headers, 2
   optional :bytes, :body, 3
 end
 
-class CMsgAMFindAccounts
+class CsgoReplay::CMsgAMFindAccounts
   optional :uint32, :search_type, 1
   optional :string, :search_string, 2
 end
 
-class CMsgAMFindAccountsResponse
+class CsgoReplay::CMsgAMFindAccountsResponse
   repeated :fixed64, :steam_id, 1
 end
 
-class CMsgNotifyWatchdog
+class CsgoReplay::CMsgNotifyWatchdog
   optional :uint32, :source, 1
   optional :uint32, :alert_type, 2
   optional :uint32, :alert_destination, 3
@@ -256,28 +256,28 @@ class CMsgNotifyWatchdog
   optional :string, :text, 7
 end
 
-class CMsgAMGetLicenses
+class CsgoReplay::CMsgAMGetLicenses
   optional :fixed64, :steamid, 1
 end
 
-class CMsgPackageLicense
+class CsgoReplay::CMsgPackageLicense
   optional :uint32, :package_id, 1
   optional :uint32, :time_created, 2
   optional :uint32, :owner_id, 3
 end
 
-class CMsgAMGetLicensesResponse
-  repeated ::CMsgPackageLicense, :license, 1
+class CsgoReplay::CMsgAMGetLicensesResponse
+  repeated ::CsgoReplay::CMsgPackageLicense, :license, 1
   optional :uint32, :result, 2
 end
 
-class CMsgAMGetUserGameStats
+class CsgoReplay::CMsgAMGetUserGameStats
   optional :fixed64, :steam_id, 1
   optional :fixed64, :game_id, 2
   repeated :uint32, :stats, 3
 end
 
-class CMsgAMGetUserGameStatsResponse
+class CsgoReplay::CMsgAMGetUserGameStatsResponse
   class Stats
     optional :uint32, :stat_id, 1
     optional :uint32, :stat_value, 2
@@ -292,46 +292,46 @@ class CMsgAMGetUserGameStatsResponse
   optional :fixed64, :steam_id, 1
   optional :fixed64, :game_id, 2
   optional :int32, :eresult, 3, :default => 2
-  repeated ::CMsgAMGetUserGameStatsResponse::Stats, :stats, 4
-  repeated ::CMsgAMGetUserGameStatsResponse::Achievement_Blocks, :achievement_blocks, 5
+  repeated ::CsgoReplay::CMsgAMGetUserGameStatsResponse::Stats, :stats, 4
+  repeated ::CsgoReplay::CMsgAMGetUserGameStatsResponse::Achievement_Blocks, :achievement_blocks, 5
 end
 
-class CMsgGCGetCommandList
+class CsgoReplay::CMsgGCGetCommandList
   optional :uint32, :app_id, 1
   optional :string, :command_prefix, 2
 end
 
-class CMsgGCGetCommandListResponse
+class CsgoReplay::CMsgGCGetCommandListResponse
   repeated :string, :command_name, 1
 end
 
-class CGCMsgMemCachedGet
+class CsgoReplay::CGCMsgMemCachedGet
   repeated :string, :keys, 1
 end
 
-class CGCMsgMemCachedGetResponse
+class CsgoReplay::CGCMsgMemCachedGetResponse
   class ValueTag
     optional :bool, :found, 1
     optional :bytes, :value, 2
   end
 
-  repeated ::CGCMsgMemCachedGetResponse::ValueTag, :values, 1
+  repeated ::CsgoReplay::CGCMsgMemCachedGetResponse::ValueTag, :values, 1
 end
 
-class CGCMsgMemCachedSet
+class CsgoReplay::CGCMsgMemCachedSet
   class KeyPair
     optional :string, :name, 1
     optional :bytes, :value, 2
   end
 
-  repeated ::CGCMsgMemCachedSet::KeyPair, :keys, 1
+  repeated ::CsgoReplay::CGCMsgMemCachedSet::KeyPair, :keys, 1
 end
 
-class CGCMsgMemCachedDelete
+class CsgoReplay::CGCMsgMemCachedDelete
   repeated :string, :keys, 1
 end
 
-class CGCMsgMemCachedStatsResponse
+class CsgoReplay::CGCMsgMemCachedStatsResponse
   optional :uint64, :curr_connections, 1
   optional :uint64, :cmd_get, 2
   optional :uint64, :cmd_set, 3
@@ -348,11 +348,11 @@ class CGCMsgMemCachedStatsResponse
   optional :uint64, :bytes, 14
 end
 
-class CGCMsgSQLStats
+class CsgoReplay::CGCMsgSQLStats
   optional :uint32, :schema_catalog, 1
 end
 
-class CGCMsgSQLStatsResponse
+class CsgoReplay::CGCMsgSQLStatsResponse
   optional :uint32, :threads, 1
   optional :uint32, :threads_connected, 2
   optional :uint32, :threads_active, 3
@@ -364,24 +364,24 @@ class CGCMsgSQLStatsResponse
   optional :uint32, :errors, 9
 end
 
-class CMsgAMAddFreeLicense
+class CsgoReplay::CMsgAMAddFreeLicense
   optional :fixed64, :steamid, 1
   optional :uint32, :ip_public, 2
   optional :uint32, :packageid, 3
   optional :string, :store_country_code, 4
 end
 
-class CMsgAMAddFreeLicenseResponse
+class CsgoReplay::CMsgAMAddFreeLicenseResponse
   optional :int32, :eresult, 1, :default => 2
   optional :int32, :purchase_result_detail, 2
   optional :fixed64, :transid, 3
 end
 
-class CGCMsgGetIPLocation
+class CsgoReplay::CGCMsgGetIPLocation
   repeated :fixed32, :ips, 1
 end
 
-class CIPLocationInfo
+class CsgoReplay::CIPLocationInfo
   optional :uint32, :ip, 1
   optional :float, :latitude, 2
   optional :float, :longitude, 3
@@ -390,16 +390,16 @@ class CIPLocationInfo
   optional :string, :city, 6
 end
 
-class CGCMsgGetIPLocationResponse
-  repeated ::CIPLocationInfo, :infos, 1
+class CsgoReplay::CGCMsgGetIPLocationResponse
+  repeated ::CsgoReplay::CIPLocationInfo, :infos, 1
 end
 
-class CGCMsgSystemStatsSchema
+class CsgoReplay::CGCMsgSystemStatsSchema
   optional :uint32, :gc_app_id, 1
   optional :bytes, :schema_kv, 2
 end
 
-class CGCMsgGetSystemStatsResponse
+class CsgoReplay::CGCMsgGetSystemStatsResponse
   optional :uint32, :gc_app_id, 1
   optional :bytes, :stats_kv, 2
   optional :uint32, :active_jobs, 3
@@ -415,7 +415,7 @@ class CGCMsgGetSystemStatsResponse
   optional :uint32, :logon_jobs, 13
 end
 
-class CMsgAMSendEmail
+class CsgoReplay::CMsgAMSendEmail
   class ReplacementToken
     optional :string, :token_name, 1
     optional :string, :token_value, 2
@@ -429,29 +429,29 @@ class CMsgAMSendEmail
   optional :fixed64, :steamid, 1
   optional :uint32, :email_msg_type, 2
   optional :uint32, :email_format, 3
-  repeated ::CMsgAMSendEmail::PersonaNameReplacementToken, :persona_name_tokens, 5
+  repeated ::CsgoReplay::CMsgAMSendEmail::PersonaNameReplacementToken, :persona_name_tokens, 5
   optional :uint32, :source_gc, 6
-  repeated ::CMsgAMSendEmail::ReplacementToken, :tokens, 7
+  repeated ::CsgoReplay::CMsgAMSendEmail::ReplacementToken, :tokens, 7
 end
 
-class CMsgAMSendEmailResponse
+class CsgoReplay::CMsgAMSendEmailResponse
   optional :uint32, :eresult, 1, :default => 2
 end
 
-class CMsgGCGetEmailTemplate
+class CsgoReplay::CMsgGCGetEmailTemplate
   optional :uint32, :app_id, 1
   optional :uint32, :email_msg_type, 2
   optional :int32, :email_lang, 3
   optional :int32, :email_format, 4
 end
 
-class CMsgGCGetEmailTemplateResponse
+class CsgoReplay::CMsgGCGetEmailTemplateResponse
   optional :uint32, :eresult, 1, :default => 2
   optional :bool, :template_exists, 2
   optional :string, :template, 3
 end
 
-class CMsgAMGrantGuestPasses2
+class CsgoReplay::CMsgAMGrantGuestPasses2
   optional :fixed64, :steam_id, 1
   optional :uint32, :package_id, 2
   optional :int32, :passes_to_grant, 3
@@ -459,12 +459,12 @@ class CMsgAMGrantGuestPasses2
   optional :int32, :action, 5
 end
 
-class CMsgAMGrantGuestPasses2Response
+class CsgoReplay::CMsgAMGrantGuestPasses2Response
   optional :int32, :eresult, 1, :default => 2
   optional :int32, :passes_granted, 2, :default => 0
 end
 
-class CGCSystemMsg_GetAccountDetails
+class CsgoReplay::CGCSystemMsg_GetAccountDetails
   # Message Options
   set_option :".msgpool_soft_limit", 128
   set_option :".msgpool_hard_limit", 512
@@ -473,7 +473,7 @@ class CGCSystemMsg_GetAccountDetails
   optional :uint32, :appid, 2
 end
 
-class CGCSystemMsg_GetAccountDetails_Response
+class CsgoReplay::CGCSystemMsg_GetAccountDetails_Response
   # Message Options
   set_option :".msgpool_soft_limit", 128
   set_option :".msgpool_hard_limit", 512
@@ -502,31 +502,31 @@ class CGCSystemMsg_GetAccountDetails_Response
   optional :uint32, :steam_level, 23
 end
 
-class CMsgGCGetPersonaNames
+class CsgoReplay::CMsgGCGetPersonaNames
   repeated :fixed64, :steamids, 1
 end
 
-class CMsgGCGetPersonaNames_Response
+class CsgoReplay::CMsgGCGetPersonaNames_Response
   class PersonaName
     optional :fixed64, :steamid, 1
     optional :string, :persona_name, 2
   end
 
-  repeated ::CMsgGCGetPersonaNames_Response::PersonaName, :succeeded_lookups, 1
+  repeated ::CsgoReplay::CMsgGCGetPersonaNames_Response::PersonaName, :succeeded_lookups, 1
   repeated :fixed64, :failed_lookup_steamids, 2
 end
 
-class CMsgGCCheckFriendship
+class CsgoReplay::CMsgGCCheckFriendship
   optional :fixed64, :steamid_left, 1
   optional :fixed64, :steamid_right, 2
 end
 
-class CMsgGCCheckFriendship_Response
+class CsgoReplay::CMsgGCCheckFriendship_Response
   optional :bool, :success, 1
   optional :bool, :found_friendship, 2
 end
 
-class CMsgGCMsgMasterSetDirectory
+class CsgoReplay::CMsgGCMsgMasterSetDirectory
   class SubGC
     optional :uint32, :dir_index, 1
     optional :string, :name, 2
@@ -536,29 +536,29 @@ class CMsgGCMsgMasterSetDirectory
   end
 
   optional :uint32, :master_dir_index, 1
-  repeated ::CMsgGCMsgMasterSetDirectory::SubGC, :dir, 2
+  repeated ::CsgoReplay::CMsgGCMsgMasterSetDirectory::SubGC, :dir, 2
 end
 
-class CMsgGCMsgMasterSetDirectory_Response
+class CsgoReplay::CMsgGCMsgMasterSetDirectory_Response
   optional :int32, :eresult, 1, :default => 2
 end
 
-class CMsgGCMsgWebAPIJobRequestForwardResponse
+class CsgoReplay::CMsgGCMsgWebAPIJobRequestForwardResponse
   optional :uint32, :dir_index, 1
 end
 
-class CGCSystemMsg_GetPurchaseTrust_Request
+class CsgoReplay::CGCSystemMsg_GetPurchaseTrust_Request
   optional :fixed64, :steamid, 1
 end
 
-class CGCSystemMsg_GetPurchaseTrust_Response
+class CsgoReplay::CGCSystemMsg_GetPurchaseTrust_Response
   optional :bool, :has_prior_purchase_history, 1
   optional :bool, :has_no_recent_password_resets, 2
   optional :bool, :is_wallet_cash_trusted, 3
   optional :uint32, :time_all_trusted, 4
 end
 
-class CMsgGCHAccountVacStatusChange
+class CsgoReplay::CMsgGCHAccountVacStatusChange
   optional :fixed64, :steam_id, 1
   optional :uint32, :app_id, 2
   optional :uint32, :rtime_vacban_starts, 3
@@ -566,61 +566,61 @@ class CMsgGCHAccountVacStatusChange
   optional :bool, :is_banned_future, 5
 end
 
-class CMsgGCGetPartnerAccountLink
+class CsgoReplay::CMsgGCGetPartnerAccountLink
   optional :fixed64, :steamid, 1
 end
 
-class CMsgGCGetPartnerAccountLink_Response
+class CsgoReplay::CMsgGCGetPartnerAccountLink_Response
   optional :uint32, :pwid, 1
   optional :uint32, :nexonid, 2
 end
 
-class CMsgGCRoutingInfo
+class CsgoReplay::CMsgGCRoutingInfo
   repeated :uint32, :dir_index, 1
-  optional ::CMsgGCRoutingInfo::RoutingMethod, :method, 2, :default => ::CMsgGCRoutingInfo::RoutingMethod::RANDOM
-  optional ::CMsgGCRoutingInfo::RoutingMethod, :fallback, 3, :default => ::CMsgGCRoutingInfo::RoutingMethod::DISCARD
+  optional ::CsgoReplay::CMsgGCRoutingInfo::RoutingMethod, :method, 2, :default => ::CsgoReplay::CMsgGCRoutingInfo::RoutingMethod::RANDOM
+  optional ::CsgoReplay::CMsgGCRoutingInfo::RoutingMethod, :fallback, 3, :default => ::CsgoReplay::CMsgGCRoutingInfo::RoutingMethod::DISCARD
   optional :uint32, :protobuf_field, 4
   optional :string, :webapi_param, 5
 end
 
-class CMsgGCMsgMasterSetWebAPIRouting
+class CsgoReplay::CMsgGCMsgMasterSetWebAPIRouting
   class Entry
     optional :string, :interface_name, 1
     optional :string, :method_name, 2
-    optional ::CMsgGCRoutingInfo, :routing, 3
+    optional ::CsgoReplay::CMsgGCRoutingInfo, :routing, 3
   end
 
-  repeated ::CMsgGCMsgMasterSetWebAPIRouting::Entry, :entries, 1
+  repeated ::CsgoReplay::CMsgGCMsgMasterSetWebAPIRouting::Entry, :entries, 1
 end
 
-class CMsgGCMsgMasterSetClientMsgRouting
+class CsgoReplay::CMsgGCMsgMasterSetClientMsgRouting
   class Entry
     optional :uint32, :msg_type, 1
-    optional ::CMsgGCRoutingInfo, :routing, 2
+    optional ::CsgoReplay::CMsgGCRoutingInfo, :routing, 2
   end
 
-  repeated ::CMsgGCMsgMasterSetClientMsgRouting::Entry, :entries, 1
+  repeated ::CsgoReplay::CMsgGCMsgMasterSetClientMsgRouting::Entry, :entries, 1
 end
 
-class CMsgGCMsgMasterSetWebAPIRouting_Response
+class CsgoReplay::CMsgGCMsgMasterSetWebAPIRouting_Response
   optional :int32, :eresult, 1, :default => 2
 end
 
-class CMsgGCMsgMasterSetClientMsgRouting_Response
+class CsgoReplay::CMsgGCMsgMasterSetClientMsgRouting_Response
   optional :int32, :eresult, 1, :default => 2
 end
 
-class CMsgGCMsgSetOptions
+class CsgoReplay::CMsgGCMsgSetOptions
   class MessageRange
     required :uint32, :low, 1
     required :uint32, :high, 2
   end
 
-  repeated ::CMsgGCMsgSetOptions::Option, :options, 1
-  repeated ::CMsgGCMsgSetOptions::MessageRange, :client_msg_ranges, 2
+  repeated ::CsgoReplay::CMsgGCMsgSetOptions::Option, :options, 1
+  repeated ::CsgoReplay::CMsgGCMsgSetOptions::MessageRange, :client_msg_ranges, 2
 end
 
-class CMsgGCHUpdateSession
+class CsgoReplay::CMsgGCHUpdateSession
   class ExtraField
     optional :string, :name, 1
     optional :string, :value, 2
@@ -634,10 +634,10 @@ class CMsgGCHUpdateSession
   optional :uint32, :server_port, 6
   optional :uint32, :os_type, 7
   optional :uint32, :client_addr, 8
-  repeated ::CMsgGCHUpdateSession::ExtraField, :extra_fields, 9
+  repeated ::CsgoReplay::CMsgGCHUpdateSession::ExtraField, :extra_fields, 9
 end
 
-class CMsgNotificationOfSuspiciousActivity
+class CsgoReplay::CMsgNotificationOfSuspiciousActivity
   class MultipleGameInstances
     optional :uint32, :app_instance_count, 1
     repeated :fixed64, :other_steamids, 2
@@ -645,7 +645,7 @@ class CMsgNotificationOfSuspiciousActivity
 
   optional :fixed64, :steamid, 1
   optional :uint32, :appid, 2
-  optional ::CMsgNotificationOfSuspiciousActivity::MultipleGameInstances, :multiple_instances, 3
+  optional ::CsgoReplay::CMsgNotificationOfSuspiciousActivity::MultipleGameInstances, :multiple_instances, 3
 end
 
 

@@ -9,7 +9,7 @@ require 'protobuf'
 ##
 # Enum Classes
 #
-class EGCSystemMsg < ::Protobuf::Enum
+class CsgoReplay::EGCSystemMsg < ::Protobuf::Enum
   define :K_EGCMsgInvalid, 0
   define :K_EGCMsgMulti, 1
   define :K_EGCMsgGenericReply, 10
@@ -88,7 +88,7 @@ class EGCSystemMsg < ::Protobuf::Enum
   define :K_EGCMsgCheckFriendshipResponse, 506
 end
 
-class ESOMsg < ::Protobuf::Enum
+class CsgoReplay::ESOMsg < ::Protobuf::Enum
   define :K_ESOMsg_Create, 21
   define :K_ESOMsg_Update, 22
   define :K_ESOMsg_Destroy, 23
@@ -99,7 +99,7 @@ class ESOMsg < ::Protobuf::Enum
   define :K_ESOMsg_CacheSubscriptionRefresh, 28
 end
 
-class EGCBaseClientMsg < ::Protobuf::Enum
+class CsgoReplay::EGCBaseClientMsg < ::Protobuf::Enum
   define :K_EMsgGCClientWelcome, 4004
   define :K_EMsgGCServerWelcome, 4005
   define :K_EMsgGCClientHello, 4006
@@ -108,7 +108,7 @@ class EGCBaseClientMsg < ::Protobuf::Enum
   define :K_EMsgGCServerConnectionStatus, 4010
 end
 
-class EGCToGCMsg < ::Protobuf::Enum
+class CsgoReplay::EGCToGCMsg < ::Protobuf::Enum
   define :K_EGCToGCMsgMasterAck, 150
   define :K_EGCToGCMsgMasterAckResponse, 151
   define :K_EGCToGCMsgRouted, 152

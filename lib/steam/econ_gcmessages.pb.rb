@@ -15,7 +15,7 @@ require 'steam/steammessages.pb'
 ##
 # Enum Classes
 #
-class EGCItemMsg < ::Protobuf::Enum
+class CsgoReplay::EGCItemMsg < ::Protobuf::Enum
   define :K_EMsgGCBase, 1000
   define :K_EMsgGCSetItemPosition, 1001
   define :K_EMsgGCCraft, 1002
@@ -157,7 +157,7 @@ class EGCItemMsg < ::Protobuf::Enum
   define :K_EMsgGCClientVersionUpdated, 2528
 end
 
-class EGCMsgResponse < ::Protobuf::Enum
+class CsgoReplay::EGCMsgResponse < ::Protobuf::Enum
   define :K_EGCMsgResponseOK, 0
   define :K_EGCMsgResponseDenied, 1
   define :K_EGCMsgResponseServerError, 2
@@ -169,7 +169,7 @@ class EGCMsgResponse < ::Protobuf::Enum
   define :K_EGCMsgFailedToCreate, 8
 end
 
-class EUnlockStyle < ::Protobuf::Enum
+class CsgoReplay::EUnlockStyle < ::Protobuf::Enum
   define :K_UnlockStyle_Succeeded, 0
   define :K_UnlockStyle_Failed_PreReq, 1
   define :K_UnlockStyle_Failed_CantAfford, 2
@@ -182,8 +182,8 @@ end
 ##
 # Message Classes
 #
-class CMsgGCGiftedItems < ::Protobuf::Message; end
-class CMsgApplyAutograph < ::Protobuf::Message; end
+class CsgoReplay::CMsgGCGiftedItems < ::Protobuf::Message; end
+class CsgoReplay::CMsgApplyAutograph < ::Protobuf::Message; end
 
 
 ##
@@ -196,7 +196,7 @@ class CMsgApplyAutograph < ::Protobuf::Message; end
 ##
 # Message Fields
 #
-class CMsgGCGiftedItems
+class CsgoReplay::CMsgGCGiftedItems
   optional :uint32, :accountid, 1
   optional :uint32, :giftdefindex, 2
   optional :uint32, :max_gifts_possible, 3
@@ -204,7 +204,7 @@ class CMsgGCGiftedItems
   repeated :uint32, :recipients_accountids, 5
 end
 
-class CMsgApplyAutograph
+class CsgoReplay::CMsgApplyAutograph
   optional :uint64, :autograph_item_id, 1
   optional :uint64, :item_item_id, 2
 end

@@ -15,7 +15,7 @@ require 'google/protobuf/descriptor.pb'
 ##
 # Enum Classes
 #
-class ENetworkDisconnectionReason < ::Protobuf::Enum
+class CsgoReplay::ENetworkDisconnectionReason < ::Protobuf::Enum
   define :NETWORK_DISCONNECT_INVALID, 0
   define :NETWORK_DISCONNECT_SHUTDOWN, 1
   define :NETWORK_DISCONNECT_DISCONNECT_BY_USER, 2
