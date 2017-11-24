@@ -1,5 +1,6 @@
 require 'celluloid/current'
 require 'celluloid/autostart'
+require 'pry'
 
 module CsgoReplay
   class DemoFile
@@ -45,13 +46,18 @@ module CsgoReplay
         when Frame::Type::PACKET, Frame::Type::SIGN_ON
           c = CmdInfo.read(io)
           p = Packet.read(io)
-          p.data.each do |data|
-            puts "CMD -> #{data.cmd}"
-            puts "SIZE -> #{data.message_size}"
-            # puts "CLASS -> #{data.protobuf_class}"
+          p.chunks.each_with_index do |chunk, index|
+            puts "CHUNK -> #{index+1}"
+            puts "OFFSET -> #{io.pos}"
+            puts "CMD -> #{chunk.cmd}"
+            puts "SIZE -> #{chunk.message_size}"
+            if klass = chunk.protobuf_class
+              message = klass.decode(chunk.message_buffer)
+              puts "BUFFER -> #{message.inspect}"
+              puts "CLASS -> #{chunk.protobuf_class}"
+            end
+
           end
-
-
         when Frame::Type::DATA_TABLES, Frame::Type::STRING_TABLES, Frame::Type::CONSOLE_COMMAND, Frame::Type::USER_COMMAND
           p = GenericPacket.read(io)
         when Frame::Type::STOP
@@ -75,7 +81,7 @@ module CsgoReplay
       end
 
       def new_message(command, data)
-        puts data
+        # puts data
       end
 
     end

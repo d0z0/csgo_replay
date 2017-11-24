@@ -1,7 +1,3 @@
-module SteamProtoDef
-
-end
-
 require 'steam/steammessages.pb'
 require 'steam/netmessages.pb'
 require 'steam/base_gcmessages.pb'

@@ -3,6 +3,7 @@ require 'bindata'
 require 'celluloid/current'
 require 'celluloid/autostart'
 require 'benchmark'
+require 'pry'
 
 class QAngle < BinData::Record
   endian :little
@@ -98,7 +99,15 @@ end
 class ProtobufMessage < BinData::Record
   var_int :cmd
   var_int :message_size
-  string :message, length: :message_size
+  # buffer :message, length: :message_size, type: :string
+
+  def protobuf_class
+    if enum = [NET_Messages.enums + SVC_Messages.enums].flatten.detect{|x| x.to_i == cmd}.try(:name)
+      e = enum.to_s.split("_")
+      klass = "CsgoReplay::C#{e[0].upcase}Msg_#{e[1..-1].join('_')}"
+      Object.const_defined?(klass) ? klass.constantize : nil
+    end
+  end
 end
 
 class GenericPacket < BinData::Record
@@ -193,6 +202,8 @@ class DemoFile
       case command
       when Frame::Type::PACKET, Frame::Type::SIGN_ON
         c = CmdInfo.read(io)
+        puts "S1-> #{c.sequence_one}"
+        puts "S2 -> #{c.sequence_two}"
         p = Packet.read(io)
         p.data.each do |data|
           puts "CMD -> #{data.cmd}"

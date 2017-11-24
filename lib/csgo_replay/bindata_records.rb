@@ -92,10 +92,32 @@ module CsgoReplay
     end
   end
 
-  class ProtobufMessage < BinData::Record
+  class ProtobufMessage < BinData::BasePrimitive
+    mandatory_parameter :length
+
+    def read_and_return_value(io)
+      io.readbytes(eval_parameter(:length))
+    end
+
+    def sensible_default
+      ""
+    end
+
+  end
+
+  class ChunkData < BinData::Record
+    endian :little
     var_int :cmd
     var_int :message_size
-    string :message, length: :message_size
+    protobuf_message :message_buffer, length: :message_size
+
+    def protobuf_class
+      if enum = [NET_Messages.enums + SVC_Messages.enums].flatten.detect{|x| x.to_i == cmd}.try(:name)
+        e = enum.to_s.split("_")
+        klass = "CsgoReplay::C#{e[0].upcase}Msg_#{e[1..-1].join('_')}"
+        Object.const_defined?(klass) ? klass.constantize : nil
+      end
+    end
   end
 
   class GenericPacket < BinData::Record
@@ -108,8 +130,8 @@ module CsgoReplay
   class Packet < BinData::Record
     endian :little
     int32 :field_size
-    buffer :data, length: :field_size do
-      array type: :protobuf_message, :read_until => :eof
+    buffer :chunks, length: :field_size do
+      array type: :chunk_data, :read_until => :eof
     end
   end
 
