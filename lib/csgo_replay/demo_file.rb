@@ -21,6 +21,7 @@ module CsgoReplay
 
     private
 
+
     def parse_header
       h = Header.read(io)
     end
@@ -32,29 +33,20 @@ module CsgoReplay
         command, tick, slot = [frame.command, frame.tick, frame.player_slot]
 
         if tick != current_tick
-          # publish "command", "TICKEND[#{current_tick}]"
           @current_tick = tick
-          # publish "command", "TICKSTART[#{current_tick}]"
         end
-        # if command != 2
-        publish "command", "COMMAND[#{io.pos}] => #{command}"
-        # end
-        # next if command == Frame::Type::SYNC_TICK
-        break if io.pos > 100000
+        # break if io.pos > 100000
 
         case command
         when Frame::Type::PACKET, Frame::Type::SIGN_ON
           c = CmdInfo.read(io)
           p = Packet.read(io)
           p.chunks.each_with_index do |chunk, index|
-            puts "CHUNK -> #{index+1}"
-            puts "OFFSET -> #{io.pos}"
-            puts "CMD -> #{chunk.cmd}"
-            puts "SIZE -> #{chunk.message_size}"
+
             if klass = chunk.protobuf_class
               message = klass.decode(chunk.message_buffer)
-              puts "BUFFER -> #{message.inspect}"
-              puts "CLASS -> #{chunk.protobuf_class}"
+              Celluloid::Notifications.publish klass.to_s, message
+
             end
 
           end
@@ -72,19 +64,6 @@ module CsgoReplay
       end
     end
 
-    class Subscriber
-      include Celluloid
-      include Celluloid::Notifications
-
-      def initialize
-        subscribe "command", :new_message
-      end
-
-      def new_message(command, data)
-        # puts data
-      end
-
-    end
 
   end
 end
