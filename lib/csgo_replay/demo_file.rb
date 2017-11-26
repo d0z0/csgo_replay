@@ -9,9 +9,12 @@ module CsgoReplay
 
     attr_reader :io
     attr_reader :current_tick
+    attr_accessor :game_event_list
+    attr_accessor :tick_events
 
     def initialize(io)
       @io = io
+      @game_event_list = {}
     end
 
     def parse
@@ -46,7 +49,19 @@ module CsgoReplay
             if klass = chunk.protobuf_class
               message = klass.decode(chunk.message_buffer)
               Celluloid::Notifications.publish klass.to_s, message
-
+              case message
+              when CSVCMsg_GameEventList
+                message.descriptors.each
+                message.descriptors.each do |descriptor|
+                  game_event_list[descriptor.eventid] = GameEvent.new(descriptor)
+                end
+              when CSVCMsg_GameEvent
+                event = game_event_list[message.eventid] # GameEvent
+                event_attributes = event.event_attributes(message)
+                binding.pry
+              when CNETMsg_SetConVar
+              when CSVCMsg_PacketEntities
+              end
             end
 
           end
