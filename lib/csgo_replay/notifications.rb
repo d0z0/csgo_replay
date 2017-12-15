@@ -5,17 +5,17 @@ module CsgoReplay
 
     attr_accessor :listener
 
-    def self.subscribe_to_events(events, &block)
+    def self.subscribe_to_events(event_types, &block)
       return unless block_given?
       n = Notifications.new
       n.listener = block
-      Array(events).each do |event|
-        n.subscribe event, :event_emitted
+      Array(event_types).each do |event_type|
+        n.subscribe event_type, :event_emitted
       end
     end
 
-    def event_emitted(event, message)
-      @listener.call(message)
+    def event_emitted(event_type, parameters)
+      @listener.call(event_type, parameters)
     end
 
   end

@@ -48,7 +48,8 @@ module CsgoReplay
 
             if klass = chunk.protobuf_class
               message = klass.decode(chunk.message_buffer)
-              Celluloid::Notifications.publish klass.to_s, message
+              # publish the class of the message and the message itself
+              Celluloid::Notifications.publish klass.to_s, {message: message}
               case message
               when CSVCMsg_GameEventList
                 message.descriptors.each
@@ -58,14 +59,31 @@ module CsgoReplay
               when CSVCMsg_GameEvent
                 event = game_event_list[message.eventid] # GameEvent
                 event_attributes = event.event_attributes(message)
-                binding.pry
+                # publish as GameEvent
+                Celluloid::Notifications.publish event.class, {name: event.name, attributes: event_attributes}
               when CNETMsg_SetConVar
               when CSVCMsg_PacketEntities
+                binding.pry
               end
             end
 
           end
-        when Frame::Type::DATA_TABLES, Frame::Type::STRING_TABLES, Frame::Type::CONSOLE_COMMAND, Frame::Type::USER_COMMAND
+        when Frame::Type::DATA_TABLES
+          p = Packet.read(io)
+          stop_flag = false
+          p.chunks.each_with_index do |chunk, index|
+            puts 'chunk'
+            if klass = chunk.protobuf_class
+              message = klass.decode(chunk.message_buffer)
+              puts message.props.map {|x| [x.var_name, x.dt_name]}
+              binding.pry if message.is_end
+              stop_flag = true if message.is_end
+            end
+          end
+        when Frame::Type::STRING_TABLES
+          p = Packet.read(io)
+
+        when Frame::Type::CONSOLE_COMMAND, Frame::Type::USER_COMMAND
           p = GenericPacket.read(io)
         when Frame::Type::STOP
           break

@@ -118,6 +118,10 @@ module CsgoReplay
         Object.const_defined?(klass) ? klass.constantize : nil
       end
     end
+
+    def message
+      protobuf_class.try(:decode, message_buffer)
+    end
   end
 
   class GenericPacket < BinData::Record
@@ -128,6 +132,14 @@ module CsgoReplay
 
 
   class Packet < BinData::Record
+    endian :little
+    int32 :field_size
+    buffer :chunks, length: :field_size do
+      array type: :chunk_data, :read_until => :eof
+    end
+  end
+
+  class DataTablesPacket < BinData::Record
     endian :little
     int32 :field_size
     buffer :chunks, length: :field_size do
